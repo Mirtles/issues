@@ -1,4 +1,4 @@
 use Mix.Config
 
 config :issues,
-girhub_url: "https://api.github.com"
+  github_url: "https://api.github.com"
