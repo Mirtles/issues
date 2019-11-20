@@ -16,15 +16,25 @@ defmodule Issues.CLI do
   Return a tuple of `{ user, project, count }`, or `:help` if help was given.
   """
   def parse_args(argv) do
-    parse = OptionParser.parse(argv, switches: [ help: :boolean],
-    aliases: [ h: :help])
+    OptionParser.parse(argv, switches: [ help: :boolean],
+      aliases: [ h: :help])
+    |>elem(1)
+    |>args_to_internal_representation()
+  end
 
-    case parse do
-      { [ help: true ], _, _ } -> :help
-      { _, [ user, project, count ], _ } -> { user, project, String.to_integer count }
-      { _, [ user, project ], _ } -> { user, project, @default_count }
-      _ -> :help
-    end
+  #  if count is given
+  def args_to_internal_representation([user, project, count]) do
+    { user, project, String.to_integer(count) }
+  end
+
+  # if no count is given
+  def args_to_internal_representation([user, project]) do
+    { user, project, @default_count }
+  end
+
+  # if 'help' (or error)
+  def args_to_internal_representation(_) do
+    :help
   end
 
 end
