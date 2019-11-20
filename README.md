@@ -4,4 +4,4 @@ Built to practice Elixir, using the tutorial from the book Programming ELixir by
 
 ## Installation
 
-On any computer that has Erlang installed, run ```$ mix escript.build```. The app will be available through ```./issues <name> <repository> [ count | 4]```.
+On any computer that has Erlang installed, run ```$ mix escript.build```. The app will be available through ```$ ./issues <name> <repository> [ count | 4]```.
