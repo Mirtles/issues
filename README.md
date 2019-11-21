@@ -1,6 +1,6 @@
 # Issues
 
-Built to practice Elixir, using the tutorial from the book Programming ELixir by Dave Thomas. This is a CLI app that fetches the latest issues from any given GitHub repository.
+Built to practice Elixir, using the tutorial from the book Programming Elixir by Dave Thomas. This is a CLI app that fetches the latest n issues from any given GitHub repository.
 
 ## Installation
 
